@@ -6,11 +6,11 @@ class ShortLinkClient:
         self.base_url = base_url
         self.token = token
 
-    def create_link(self, redirect_url, code=None, expired_at=None):
+    def create_link(self, redirect_url, code=None, expired_at=None, length=6):
 
         if not code:
             alphabet = 'xbcdefghiuklmnopqrstuvwxyz0123456789'
-            code = ''.join(random.choices(alphabet, k=6))
+            code = ''.join(random.choices(alphabet, k=length))
 
         payload = {
             "redirect_url": redirect_url,
