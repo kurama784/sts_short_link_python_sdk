@@ -10,7 +10,7 @@ class ShortLinkClient:
 
         if not code:
             alphabet = 'xbcdefghiuklmnopqrstuvwxyz0123456789'
-            code = ''.join(random.choices(alphabet, k=8))
+            code = ''.join(random.choices(alphabet, k=6))
 
         payload = {
             "redirect_url": redirect_url,
