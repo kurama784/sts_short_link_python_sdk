@@ -25,4 +25,7 @@ class ShortLinkClient:
 
         response = requests.post(f"{self.base_url}/v1/backend/link", json=payload, headers=headers)
         response.raise_for_status()
-        return response.json()
+
+        resp_data = response.json()
+
+        return resp_data['Url']
